@@ -1,0 +1,5 @@
+model Image {
+    id  Int @default(autoincrement()) @id
+    title String
+    url String
+}
