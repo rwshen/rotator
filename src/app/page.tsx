@@ -1,11 +1,9 @@
-import { MainImage } from '@/components/MainImage'
-import styles from './page.module.css'
-import { Title } from '@/components/title'
+import { MainImage, Title } from '@/components'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <Title title="test"/>
+    <main>
+      <Title title="Image Rotator" color="#9C92A3"/>
       <section>
         <MainImage />
       </section>
