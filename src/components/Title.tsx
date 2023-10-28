@@ -6,13 +6,16 @@ import { BsFillBalloonHeartFill } from 'react-icons/bs'
 export function Title(props: { title: string, color: string }) {
     const color = props.color;
     return (
-        <div css={css`
-            margin: 0;
+        <div>
+            <p css={css`
+            grid-area: header;
             background-color: ${color};
+            font-size: 2rem;
+            text-align: left;
+            width: 100vw;
+            margin-bottom: 15px;
         `}>
-            <p>
-            Let's see some stuff <BsFillBalloonHeartFill /></p>
-            {props.title}
+            Let's see some stuff <BsFillBalloonHeartFill css={css`padding-top: 5px;`}/></p>
         </div>
     )
 }
