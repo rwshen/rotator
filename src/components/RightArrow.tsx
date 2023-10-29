@@ -7,10 +7,13 @@ import { PiArrowSquareRightBold } from 'react-icons/pi'
 export const RightArrow = (props: { width: number, height: number}) => {
     return (
         <button css={css`
-        height: ${props.height}px;
+        height: ${props.height / 2}px;
         width: ${props.width}px;
         border: none;
         background-color: transparent;
+        &:hover {
+            cursor: pointer;
+        }
         `}>
             <PiArrowSquareRightBold css={css`
             height: ${props.height}px;

@@ -10,6 +10,9 @@ export const LeftArrow = (props: { width: number, height: number}) => {
             width: ${props.width}px;
             border: none;
             background-color: transparent;
+            &:hover {
+                cursor: pointer;
+            }
             `}>
                 <PiArrowSquareLeftBold  css={css`
                 height: ${props.height}px;

@@ -8,29 +8,28 @@ export default function Home() {
   return (
     <main css={css`
       display: grid;
-      grid-gap: 1rem;
-      align-items: start;
+      justify-items: center;
     `}>
       <Title title="Image Rotator" color="#9C92A3"/>
       <section css={css`
-      display: grid;
-      grid-template-columns: repeat(auto-fill, 100px);
-      grid-template-rows: 20% 20% 20% 20% 20%;
+      margin-top: 5%;
+      grid-template-column: repeat(5, 20%);
+      grid-template-row: repeat(5, 20%);
       }
       `}>
         <LeftArrow css={css`
-        grid-column-start: 4;
-        grid-row-start: 5;
+          grid-column: 2 / span 3;
+          grid-row: 3 / span 3;
         `}
         width={100} height={500}/>
         <MainImage css={css`
-        grid-area: content;
-        grid-column-start: 4;
+          grid-column: 3/span 4;
+          grid-row: 3/span 4;
         `}
         width={500} height={500} />
         <RightArrow css={css`
-        grid-column-start: 5;
-        grid-row-start: 8;
+        grid-column: 5/span 3;
+        grid-row: 3/span 4;
         `}
         width={100} height={500} />
       </section>
