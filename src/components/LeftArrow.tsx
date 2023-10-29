@@ -1,11 +1,18 @@
 "use client";
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react"
+import { useState } from 'react'
+import { css } from '@emotion/react'
 import { PiArrowSquareLeftBold } from 'react-icons/pi'
 
-export const LeftArrow = (props: { width: number, height: number}) => {
+export const LeftArrow = (props: { width: number, height: number }) => {
+    const [] = useState();
+    const clickHandler = () => { 
+        
+    }
+
     return (
-            <button css={css`
+        <button onClick={clickHandler}
+            css={css`
             height: ${props.height}px;
             width: ${props.width}px;
             border: none;
@@ -14,10 +21,10 @@ export const LeftArrow = (props: { width: number, height: number}) => {
                 cursor: pointer;
             }
             `}>
-                <PiArrowSquareLeftBold  css={css`
+            <PiArrowSquareLeftBold css={css`
                 height: ${props.height}px;
                 width: ${props.width}px;
-                `}/>
-            </button>
+                `} />
+        </button>
     )
 }

@@ -5,8 +5,15 @@ import { PiArrowSquareRightBold } from 'react-icons/pi'
 
 
 export const RightArrow = (props: { width: number, height: number}) => {
+    const onClickHandler = () => {
+        return 
+    };
+    
     return (
-        <button css={css`
+        <button 
+        onClick={onClickHandler}
+        type="submit"
+        css={css`
         height: ${props.height / 2}px;
         width: ${props.width}px;
         border: none;

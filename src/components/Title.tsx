@@ -8,7 +8,6 @@ export function Title(props: { title: string, color: string }) {
     return (
         <div>
             <p css={css`
-            grid-area: header;
             background-color: ${color};
             font-size: 2rem;
             width: 100vw;
