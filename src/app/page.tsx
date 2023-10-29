@@ -1,7 +1,7 @@
 "use client";
 /** @jsxImportSource @emotion/react */
 
-import { MainImage, Title, LeftArrow, RightArrow } from '@/components'
+import { MainImage, Header, LeftArrow, RightArrow } from '@/components'
 import { css } from '@emotion/react'
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       display: grid;
       justify-items: center;
     `}>
-      <Title title="Image Rotator" color="#9C92A3"/>
+      <Header title="Image Rotator" color="#9C92A3"/>
       <section css={css`
       margin-top: 5%;
       grid-template-column: repeat(5, 20%);

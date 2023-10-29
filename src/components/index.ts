@@ -1,4 +1,4 @@
-export { Title } from './Title';
+export { Header } from './Header';
 export { MainImage } from './MainImage';
 export { RightArrow } from './RightArrow';
 export { LeftArrow } from './LeftArrow';
