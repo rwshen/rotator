@@ -4,15 +4,13 @@ import { useState } from "react";
 import { css } from "@emotion/react"
 import { PiArrowSquareLeftBold } from 'react-icons/pi'
 
-export const LeftArrow = (props: { width: number, height: number}) => {
-    const [] = useState()
-    
-    const onClickHandler = () => {}
-    
+export const LeftArrow = (props: { width: number, height: number, indexForImage: number }) => {
+    const { indexForImage } = props;
+    let [index, setIndex] = useState(indexForImage);
     return (
-            <button 
+        <button
             type='submit'
-            onClick={onClickHandler}
+            onClick={() => setIndex(index === 1 ? 0 : 1)}
             css={css`
             height: ${props.height}px;
             width: ${props.width}px;
@@ -22,10 +20,10 @@ export const LeftArrow = (props: { width: number, height: number}) => {
                 cursor: pointer;
             }
             `}>
-                <PiArrowSquareLeftBold  css={css`
+            <PiArrowSquareLeftBold css={css`
                 height: ${props.height}px;
                 width: ${props.width}px;
-                `}/>
-            </button>
+                `} />
+        </button>
     )
 }
