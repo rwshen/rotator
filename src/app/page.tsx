@@ -22,7 +22,6 @@ export default function Home() {
           grid-column: 2 / span 3;
           grid-row: 3 / span 3;
         `}
-          indexForImage={0}
           width={100} 
           height={500}
            />

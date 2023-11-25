@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['placekitten.com', 'loremflickr.com',]
+        remotePatterns: [{hostname: 'placekitten.com'}, {hostname: 'loremflickr.com'}]
         // remotePatterns: [
         //     {
         //     protocol: 'http',
