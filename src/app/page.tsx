@@ -5,6 +5,9 @@ import { MainImage, Header, LeftArrow, RightArrow } from '@/components'
 import { css } from '@emotion/react'
 
 export default function Home() {
+  let pull_data = (data: number) => {
+    console.log(data)
+  }
   return (
     <main css={css`
       display: grid;
@@ -24,6 +27,7 @@ export default function Home() {
         `}
           width={100} 
           height={500}
+          func={pull_data}
            />
         <MainImage 
           css={css`

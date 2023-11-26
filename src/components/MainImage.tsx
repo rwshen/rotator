@@ -13,6 +13,7 @@ export function MainImage(props: { width: number, height: number }) {
             src={`http://${imgSrc[1]}${props.width}/${props.height}`} 
             alt="Placeholder kitten is saving the day" 
             width={props.width} 
+            priority
             height={props.height} />
     )
 }

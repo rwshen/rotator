@@ -1,24 +1,21 @@
 "use client";
 /** @jsxImportSource @emotion/react */
-import { useCallback, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { css } from "@emotion/react"
 import { PiArrowSquareLeftBold } from 'react-icons/pi'
 
-export const LeftArrow = (props: { width: number, height: number }) => {
-    const [number, setNumber] = useState(0)
-    let numberRef = useRef<null | number>(null)
-    const onClickHandler = useCallback((i: number) => {
-        setNumber((n) => n = Math.random() * 10)
-        if (numberRef.current !== number) {
-            numberRef.current = number
-        }
-        console.log(number)
-        console.log(numberRef)
-    }, [])
+export const LeftArrow = (props: { width: number, height: number, func: ((d: any) => void)}) => {
+    const [newNumber, setNewNumber] = useState<number>(0)
+    useEffect(() => {
+       props.func(newNumber)
+    }, [newNumber, setNewNumber, props.func])
     return (
         <button
             type='submit'
-            onClick={() => onClickHandler}
+            onClick={() => {
+                let random = Number((Math.random() * 10).toFixed(0))
+                setNewNumber(random)
+            }}
             css={css`
                 height: ${props.height}px;
                 width: ${props.width}px;
@@ -28,8 +25,7 @@ export const LeftArrow = (props: { width: number, height: number }) => {
                     cursor: pointer;
                 }
             `
-            }
-            ref={numberRef.current as null}>
+            }>
             <PiArrowSquareLeftBold css={css`
                 height: ${props.height}px;
                 width: ${props.width}px;
