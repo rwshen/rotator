@@ -14,8 +14,10 @@
     "@emotion/react": "^11.11.1",
     "@prisma/client": "^5.4.2",
     "@react-icons/all-files": "^4.1.0",
+    "babel-plugin-inline-react-svg": "^2.0.2",
     "image-loader": "^0.0.1",
     "next": "latest",
+    "next-react-svg": "^1.2.0",
     "node": "",
     "prisma": "^5.4.2",
     "react": "^18",
@@ -28,6 +30,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "13.5.4",
+    "react-svg-loader": "^3.0.3",
     "typescript": "^5"
   }
 }

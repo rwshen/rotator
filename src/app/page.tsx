@@ -41,7 +41,8 @@ export default function Home() {
           grid-row: 3/span 4;
         `}
           width={100}
-          height={500} />
+          height={500} 
+          func={pull_data}/>
       </section>
     </main>
   )
