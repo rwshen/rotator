@@ -1,21 +1,37 @@
 "use client";
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import  Image from 'next/image'
+import Image from 'next/image'
+import { useCallback, useEffect, useState } from "react";
 
-export function MainImage(props: { width: number, height: number }) {
+const loaderProp = ({ src }: any) => {
+    return src;
+}
+
+export function MainImage(props: { width: number, height: number, numberFromClicks: number}) {
+    const [index, setIndex] = useState<number>(2)
     const imgSrc = ['placekitten.com/g/', 'loremflickr.com/', 'placeholder.pics/svg/'];
-    const loaderProp =({ src }: any ) => {
-        return src;
-    }
+    const { numberFromClicks } = props
+    console.log(numberFromClicks)
+
+    useEffect(() => {
+        setIndex(numberFromClicks)
+        console.log(index)
+    }, [numberFromClicks, index])
+
+    const changeImg = useCallback(() => {
+        numberFromClicks > 2 ? 1 : numberFromClicks
+        return `http://${imgSrc[numberFromClicks]}${props.width}/${props.height}`
+    },[index, numberFromClicks])
+    
     return (
         <Image css={css`
             border-radius: 30px;
-            `} 
-            src={`http://${imgSrc[2]}${props.width}/${props.height}`} 
-            alt="Placeholder kitten is saving the day" 
+            `}
+            src={changeImg()}
+            alt="Placeholder kitten is saving the day"
             loader={loaderProp}
-            width={props.width} 
+            width={props.width}
             priority
             height={props.height}
         />

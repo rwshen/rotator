@@ -5,8 +5,10 @@ import { MainImage, Header, LeftArrow, RightArrow } from '@/components'
 import { css } from '@emotion/react'
 
 export default function Home() {
+  let numberFromClicks = 0;
   let pull_data = (data: number) => {
-    console.log(data)
+    numberFromClicks = data;
+    console.log({numberFromClicks})
   }
   return (
     <main css={css`
@@ -35,7 +37,9 @@ export default function Home() {
           grid-row: 3/span 4;
         `}
           width={500}
-          height={500} />
+          height={500} 
+          numberFromClicks={numberFromClicks}
+          />
         <RightArrow css={css`
           grid-column: 5/span 3;
           grid-row: 3/span 4;
